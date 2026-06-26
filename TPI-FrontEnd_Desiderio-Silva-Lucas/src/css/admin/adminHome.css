@@ -134,7 +134,7 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 765px) {
-    /* Solo dejamos lo que es exclusivo de esta vista. El resto ya está en admin.css y base.css */
+    /* Solo dejamos lo que es exclusivo de este css, el resto ya está en admin.css y base.css */
     .paneles-container {
         grid-template-columns: 1fr;
     }

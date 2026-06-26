@@ -134,12 +134,12 @@ img {
     filter: none;
 }
 
-/* Estilos para el logo PNG */
+/* Estilos para el logo .png */
 .logo {
     height: 35px;        
     width: auto;         
     position: relative;
-    left: -11px; /* Usamos números negativos que nos permite mover el logo por donde sea sin usar position absolute y perder su lugar en el DOM */
+    left: -11px;  /* Usamos números negativos que nos permite mover el logo por donde sea sin usar position absolute y perder su lugar en el DOM */
     object-fit: contain;
     border: none !important;
     background: transparent !important;
@@ -220,7 +220,7 @@ a:hover {
 }
 
 @media (max-width: 765px) {
-    /* Magia pura: Redefinimos la variable global y el nav, main y footer se ajustan solos */
+    /* Redefinimos la variable global y el nav, main y footer se ajustan solos */
     :root {
         --nav-width: 100px;
     }

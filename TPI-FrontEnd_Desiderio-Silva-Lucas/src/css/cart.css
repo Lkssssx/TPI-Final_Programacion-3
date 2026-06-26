@@ -22,7 +22,7 @@ main {
     align-items: start;
 }
 
-/* Media queries unificadas para el layout principal */
+/* Media queries para el layout principal */
 @media (max-width: 1150px) {
     main {
         /* Pasamos a 1 sola columna centrada */
@@ -33,7 +33,7 @@ main {
 @media (max-width: 765px) {
     main { 
         margin-left: 100px;
-        grid-template-columns: 1fr; /* En celulares el checkout queda abajo */
+        grid-template-columns: 1fr;
         padding: 1.5rem;
      }
      
@@ -56,7 +56,6 @@ main {
     width: 100%;
     text-align: center;
     margin-bottom: 3rem;
-    /* grid-column y top eliminados: obsoletos en este contexto flex y sin position */
 }
 
 /* ===== CARDS ===== */
@@ -106,7 +105,6 @@ article img {
     margin: 0;
 }
 
-/* Ajustes de tarjeta para celulares */
 @media (max-width: 765px) {
     article {
         flex-direction: column;
@@ -124,7 +122,7 @@ article img {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background-color: var(--color-bg); /* Fondo gris clarito para el grupito */
+    background-color: var(--color-bg);
     padding: 0.5rem 1rem;
     border-radius: 3rem;
     border: 1px solid var(--color-input-border);
@@ -139,7 +137,7 @@ article img {
     align-items: center;
     color: var(--color-text-light);
     border: none;
-    border-radius: 50%; /* Botones redondos */
+    border-radius: 50%; /* Botones circulares */
     font-size: 2rem;
     font-weight: bold;
     transition: var(--transition);
@@ -174,7 +172,7 @@ article img {
 
 @media (max-width: 765px) {
     .agregar-sacar-producto {
-        margin: 0 auto; /* Centramos los botones de +/- en celulares */
+        margin: 0 auto;
     }
 }
 
@@ -208,7 +206,7 @@ article img {
     height: fit-content;
     position: sticky;
     top: 10rem;
-    display: none; /* para que no salga por 1 segundo y se vaya si es que no hay items */
+    display: none; /* para que no salga por 0,1 segundos y se vaya si es que no hay items */
 }
 
 #total {
@@ -241,7 +239,7 @@ article img {
     filter: brightness(90%);
 }
 
-/* En tablets y móviles el checkout pierde el sticky */
+/* En tablets y celulares el checkout pierde el sticky */
 @media (max-width: 1150px) {
     .checkout-container {
         position: static; 
@@ -312,7 +310,7 @@ article img {
 }
 
 .input-group input::placeholder {
-    color: #9CA3AF; /* Un gris sutil para el texto de ejemplo */
+    color: #9CA3AF;
 }
 
 
@@ -361,19 +359,19 @@ article img {
     filter: brightness(90%);
 }
 
-/* ===== FEEDBACK DEL RESULTADO DE AGREGAR MÁS ===== */
+/* ===== FEEDBACK DEL RESULTADO DE AGREGAR MÁS SI ES QUE NO HAY MÁS STOCK ===== */
 
 #agregar-rs {
     position: fixed;
     top: 6rem;
-    left: 17rem;
-    width: 20rem;
+    left: 190px;
+    width: 200px;
 }
 
 @media (max-width: 765px) {
     #agregar-rs {
-        left: 12rem;
-        width: 15rem;
+        left: 140px;
+        width: 150px;
     }
 }
 

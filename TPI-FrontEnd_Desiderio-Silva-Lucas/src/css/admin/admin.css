@@ -181,7 +181,7 @@
     max-width: 500px;
     max-height: 90vh; 
     overflow-y: auto; /* Activa el scroll solo si es necesario */
-    margin: auto; /* Centrado de seguridad */
+    margin: auto; /* Centrado */
     border-radius: var(--border-radius);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     animation: slideDown 0.3s ease-out;
@@ -244,7 +244,7 @@
     padding: 0;
 }
 
-/* Estilos específicos para inputs dentro del modal */
+/* Estilos especificos para inputs dentro del modal */
 .form-group input, 
 .form-group textarea,
 .form-group select {
