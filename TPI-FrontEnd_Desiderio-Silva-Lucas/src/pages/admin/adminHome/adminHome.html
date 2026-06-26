@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store — Dashboard</title>
+    <link rel="icon" type="image/png" href="../../../icon.png">
+    <link rel="stylesheet" href="../../../css/base.css">
+    <link rel="stylesheet" href="../../../css/admin/admin.css">
+    <link rel="stylesheet" href="../../../css/admin/adminHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="logo-seccion"><a href="../adminHome/adminHome.html"><img src="../../../logo-texto.png" alt="Logo" class="logo"></a><span class="panel-admin-span">| Panel Admin</span></div>
+        <button class="cerrar-sesion"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+    </header>
+
+    <nav id="main-nav">
+        <ul id="nav-list">
+            <li><a class="nav-item clicked" href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li><a class="nav-item" href="../products/adminProducts.html"><i class="fa-solid fa-box"></i> Productos</a></li>
+            <li><a class="nav-item" href="../categories/adminCategories.html"><i class="fa-solid fa-tags"></i> Categorías</a></li>
+            <li><a class="nav-item" href="../orders/adminOrders.html"><i class="fa-solid fa-receipt"></i> Pedidos</a></li>
+            <li><a class="nav-item" href="../../store/home/home.html"><i class="fa-solid fa-store"></i> Ver Tienda</a></li>
+        </ul>
+    </nav>
+
+    <main id="dashboard-main">
+        
+        <section class="tarjetas-container">
+            <div class="tarjeta-dashboard">
+                <div class="tarjeta-icono icono-categorias"><i class="fa-solid fa-tags"></i></div>
+                <div class="tarjeta-info">
+                    <h3>Categorías</h3>
+                    <p id="stat-total-categorias">0</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-dashboard">
+                <div class="tarjeta-icono icono-productos"><i class="fa-solid fa-box"></i></div>
+                <div class="tarjeta-info">
+                    <h3>Total Productos</h3>
+                    <p id="stat-total-productos">0</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-dashboard">
+                <div class="tarjeta-icono icono-disponibles"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="tarjeta-info">
+                    <h3>Productos Disp.</h3>
+                    <p id="stat-productos-disponibles">0</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-dashboard">
+                <div class="tarjeta-icono icono-pedidos"><i class="fa-solid fa-receipt"></i></div>
+                <div class="tarjeta-info">
+                    <h3>Total Pedidos</h3>
+                    <p id="stat-total-pedidos">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="paneles-container">
+            
+            <div class="panel-resumen-card">
+                <h2><i class="fa-solid fa-sliders"></i> Estado de Entidades</h2>
+                <div class="resumen-fila">
+                    <span>Productos Activos:</span>
+                    <strong id="resumen-productos-activos">0</strong>
+                </div>
+                <div class="resumen-fila">
+                    <span>Productos Inactivos:</span>
+                    <strong id="resumen-productos-inactivos">0</strong>
+                </div>
+                <div class="resumen-fila">
+                    <span>Productos Sin Stock:</span>
+                    <strong id="resumen-productos-sin-stock">0</strong>
+                </div>
+                <hr class="resumen-divisor">
+                <div class="resumen-fila">
+                    <span>Categorías Activas:</span>
+                    <strong id="resumen-categorias-activas">0</strong>
+                </div>
+            </div>
+
+            <div class="panel-resumen-card">
+                <h2><i class="fa-solid fa-chart-simple"></i> Pedidos por Estado</h2>
+                <div class="resumen-fila">
+                    <span class="estado-badge estado-pendiente">PENDIENTE</span>
+                    <strong id="resumen-pedidos-pendiente">0</strong>
+                </div>
+                <div class="resumen-fila">
+                    <span class="estado-badge estado-en-preparacion">EN PREPARACION</span>
+                    <strong id="resumen-pedidos-preparacion">0</strong>
+                </div>
+                <div class="resumen-fila">
+                    <span class="estado-badge estado-entregado">ENTREGADO</span>
+                    <strong id="resumen-pedidos-entregado">0</strong>
+                </div>
+                <div class="resumen-fila">
+                    <span class="estado-badge estado-cancelado">CANCELADO</span>
+                    <strong id="resumen-pedidos-cancelado">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Food Store. Panel de Administración Integrado.</p>
+    </footer>
+
+    <script type="module" src="adminHome.ts"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+
+/* =============================================
+   MODALDETAIL.CSS — Food Store
+   Requiere base.css cargado antes
+   ============================================= */
+
+   
+/* ===== MODAL OVERLAY ===== */
+#modal-overlay {
+    position: fixed;
+    inset: 0;   /* equivalente a top/right/bottom/left: 0 */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+#modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+/* ===== MODAL CONTENT ===== */
+#modal-content {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    width: 70rem;
+    max-width: 90vw;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+#modal-cerrar {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text);
+    transition: var(--transition);
+    line-height: 1;
+}
+
+#modal-cerrar:hover {
+    color: var(--color-error);
+    transform: scale(1.2);
+    filter: none;
+}
+
+/* ===== MODAL HEADER ===== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-input-border);
+}
+
+.modal-header h2 {
+    font-size: 2.5rem;
+}
+
+/* ===== MODAL META ===== */
+.modal-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--color-primary-light);
+    border-radius: var(--border-radius);
+}
+
+.modal-meta p {
+    font-size: 1.4rem;
+    padding: 0;
+    color: var(--color-text);
+}
+
+.modal-total {
+    color: var(--color-price);
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+/* ===== MODAL PRODUCTOS ===== */
+#modal-body h3 {
+    font-size: 2rem;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.modal-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-producto {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-input-border);
+    background-color: var(--color-bg);
+}
+
+.modal-producto img {
+    width: 12rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin: 0;
+    box-shadow: none;
+}
+
+.modal-producto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal-producto-info p {
+    font-size: 1.4rem;
+    padding: 0;
+    color: var(--color-text);
+}
+
+.modal-producto-nombre {
+    font-size: 1.6rem !important;
+    color: var(--color-primary-dark) !important;
+}
+
+.modal-subtotal {
+    color: var(--color-price) !important;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+    .modal-producto {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-producto img {
+        width: 100%;
+        height: 15rem;
+    }
+
+    .modal-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

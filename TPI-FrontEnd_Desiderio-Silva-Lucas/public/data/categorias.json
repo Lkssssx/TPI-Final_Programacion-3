@@ -1,0 +1,7 @@
+[
+  { "id": 1, "nombre": "Hamburguesas", "descripcion": "Hamburguesas artesanales con carne premium", "imagen": "https://osojimix.com/wp-content/uploads/2021/04/hamburguesa.jpg" },
+  { "id": 2, "nombre": "Pizzas", "descripcion": "Pizzas al horno de barro", "imagen": "https://joyfoodsunshine.com/wp-content/uploads/2020/08/whole-wheat-pizza-dough-recipe-1x1-1.jpg" },
+  { "id": 3, "nombre": "Empanadas", "descripcion": "Empanadas caseras horneadas", "imagen": "https://fedecocina.net/static/926b527754a5b7bffcd1c88bdab93235/02dff/empanadas-de-carne-1x1.jpg" },
+  { "id": 4, "nombre": "Bebidas", "descripcion": "Bebidas frías y calientes", "imagen": "https://newbarmdp.com/wp-content/uploads/gaseosa-linea-coca-cola-15-l.jpg" },
+  { "id": 5, "nombre": "Papas Fritas", "descripcion": "Acompañamientos crujientes", "imagen": "https://www.petitchef.es/imgupl/recipe/1x1-454390p704585.jpg" }
+]

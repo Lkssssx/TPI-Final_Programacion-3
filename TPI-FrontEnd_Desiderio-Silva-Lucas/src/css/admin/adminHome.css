@@ -1,0 +1,141 @@
+/* =============================================
+   ADMINHOME.CSS — Panel de Administración (Dashboard)
+   ============================================= */
+
+/* ===== TARJETAS SUPERIORES (Estadísticas) ===== */
+.tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 2rem;
+}
+
+.tarjeta-dashboard {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 10px var(--color-shadow);
+    border: 1px solid var(--color-input-border);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: var(--transition);
+}
+
+.tarjeta-dashboard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--color-shadow);
+}
+
+.tarjeta-icono {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    flex-shrink: 0;
+}
+
+/* Colores representativos por entidad */
+.icono-categorias {
+    background-color: #E8F0FE; 
+    color: #1A73E8;
+}
+
+.icono-productos {
+    background-color: var(--color-primary-light); 
+    color: var(--color-primary-dark);
+}
+
+.icono-disponibles {
+    background-color: var(--color-success-bg); 
+    color: var(--color-success);
+}
+
+.icono-pedidos {
+    background-color: #FFF3E0; 
+    color: #F57C00;
+}
+
+.tarjeta-info h3 {
+    font-size: 1.4rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.tarjeta-info p {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--color-text);
+    padding: 0; 
+    margin: 0;
+}
+
+/* ===== PANELES INFERIORES (Listas) ===== */
+.paneles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+.panel-resumen-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: 0 4px 10px var(--color-shadow);
+    border: 1px solid var(--color-input-border);
+}
+
+.panel-resumen-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 2px solid var(--color-bg);
+    padding-bottom: 1.5rem;
+}
+
+.panel-resumen-card h2 i {
+    color: var(--color-primary);
+}
+
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--color-bg);
+}
+
+.resumen-fila:last-child {
+    border-bottom: none;
+}
+
+.resumen-fila span {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    padding: 0;
+}
+
+.resumen-fila strong {
+    font-size: 1.6rem;
+    color: var(--color-text);
+}
+
+.resumen-divisor {
+    border: none;
+    border-top: 2px dashed var(--color-input-border);
+    margin: 1rem 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 765px) {
+    /* Solo dejamos lo que es exclusivo de esta vista. El resto ya está en admin.css y base.css */
+    .paneles-container {
+        grid-template-columns: 1fr;
+    }
+}

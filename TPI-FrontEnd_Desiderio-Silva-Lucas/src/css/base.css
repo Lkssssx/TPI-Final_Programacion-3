@@ -1,0 +1,416 @@
+/* =============================================
+   BASE.CSS — Food Store
+   Compartido por todas las páginas del proyecto
+   ============================================= */
+
+/* ===== VARIABLES ===== */
+:root {
+    /* --- COLOR PRINCIPAL: Rojo Vibrante --- */
+    --color-primary: #F20D3B;       /* Rojo saturado, limpio y de alto impacto */
+    --color-primary-dark: #C2002E;  /* Rojo profundo para el hover */
+    --color-primary-light: #FFE5EB; /* Rosa clarito para fondos destacados */
+    /* --- FONDOS Y NEUTROS --- */
+    --color-bg: #F9F9F9;            /* Blanco puro con pizca de gris, luminoso */
+    --color-hd-bg: #ffffff;         /* Header blanco, todo limpio y abierto */
+    --color-nav-bg: #1A1A1A;        /* Negro profundo para la navegación */
+    --color-nav-hover: #2E2E2E;     /* Se aclara sutilmente en hover */
+    /* --- TEXTOS --- */
+    --color-text: #2B2D31;          /* Gris casi negro, no cansa la vista */
+    --color-text-light: #FFFFFF;
+    --color-white: #FFFFFF;
+    --color-h1: #2B2D31;            /* En header blanco el h1 va oscuro */
+    --color-h2: #2B2D31;
+    /* --- ESTADOS (Éxito, Error, Precios) --- */
+    --color-success: #20C997;       /* Verde esmeralda, contrasta bien con el rojo */
+    --color-error: #C2002E;         /* Reutiliza el primary-dark, coherente */
+    --color-error-bg: rgba(242, 13, 59, 0.08);
+    --color-success-bg: rgba(32, 201, 151, 0.1);
+    --color-price: #2E7D32;         /* Verde sólido, transmite seguridad */
+    /* --- INPUTS Y EXTRAS --- */
+    --color-input-bg: #FFFFFF;
+    --color-input-border: #E0E0E0;  /* Borde neutro, no compite con el rojo */
+    --color-back-btn: #cfcfcf;        /* Gris claro, acompaña el nav */
+    --color-back-btn-hover: #c5c5c5;  /* Mismo tono que nav-hover */
+    --color-close-sesion: #2B2D31;
+    --color-close-sesion-hover: #d60838;  /* Sube al primary-dark en hover */
+    --color-add-product-btn: #FF4757;
+    --color-add-product-btn-hover: #E8354A;
+    --color-cart-add: #1DB954;
+    --color-cart-remove: #DC2626;
+
+    /* --- ESTADOS DE PEDIDOS --- */
+    --color-pending: #E65100;
+    --color-in-preparation: #1565C0;
+    --color-delivered: #1eb889;
+    --color-canceled: #C2002E;
+
+
+    /* --- SOMBRAS Y BORDES --- */
+    --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra sutil y elegante */
+    --border-radius: 1rem;
+    --transition: all 0.2s ease-in-out;
+    
+    /* --- ESTRUCTURA --- */
+    --nav-width: 180px;             /* Controla el ancho del menú y los márgenes de todo el layout */
+}
+
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== HTML / BODY / MAIN ===== */
+html {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 10px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 500px;
+    min-width: 500px;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex: 1; /* empuja el footer al fondo */
+    margin-left: var(--nav-width);
+    animation: slideUp 0.4s ease-out; /* Animación de carga */
+}
+
+/* ===== TIPOGRAFÍA BASE ===== */
+p, a, label {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--color-h1);
+}
+
+h2 {
+    color: var(--color-h2)
+}
+
+/* ===== IMÁGENES ===== */
+img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 5px var(--color-shadow);
+    margin: 1rem 0px 2rem 0px;
+}
+
+/* ===== LOGO ===== */
+
+/* Contenedor principal del logo y el título */
+.logo-seccion {
+    display: flex; 
+    align-items: flex-end;
+    gap: 12px;           
+    padding: 1rem 0;
+    margin: 0; 
+}
+
+.logo-seccion a {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.logo-seccion a:hover {
+    filter: none;
+}
+
+/* Estilos para el logo PNG */
+.logo {
+    height: 35px;        
+    width: auto;         
+    position: relative;
+    left: -11px; /* Usamos números negativos que nos permite mover el logo por donde sea sin usar position absolute y perder su lugar en el DOM */
+    object-fit: contain;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
+    user-select: none;      /* Bloquea la selección del logo */
+}
+/* ===== BOTONES — BASE ===== */
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+}
+
+a:hover {
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
+/* ===== NAV LATERAL ===== */
+#main-nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: var(--nav-width);
+    background-color: var(--color-nav-bg);
+    padding-top: 1rem;
+    z-index: 100;
+    transition: 0ms;
+    overflow-y: auto; /* Activa el scroll solo si es necesario */
+}
+
+#main-nav ul {
+    list-style: none;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#main-nav ul .nav-item {
+    display: block;
+    padding: 2rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    background-color: transparent;
+    border: 0px;
+    width: 100%;
+    box-sizing: border-box; /* Evita que el padding rompa el 100% del ancho */
+    text-align: left;
+    transform: none; /* overwrite para los botones */
+}
+
+#main-nav ul .nav-item:hover {
+    background-color: var(--color-nav-hover);
+    border-left: 5px solid var(--color-primary);
+    filter: none;
+}
+
+
+#main-nav ul .nav-item.clicked {
+    background-color: transparent; 
+    color: var(--color-primary);
+    border-left: 6px solid var(--color-primary);
+}
+
+@media (max-width: 765px) {
+    /* Magia pura: Redefinimos la variable global y el nav, main y footer se ajustan solos */
+    :root {
+        --nav-width: 100px;
+    }
+
+    #main-nav ul .nav-item {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== BOTÓN CERRAR SESIÓN ===== */
+.cerrar-sesion {
+    background-color: var(--color-close-sesion);;
+    color: var(--color-text-light);
+    padding: 1.1rem 1.5rem;
+    border: 0px;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.05rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cerrar-sesion:hover {
+    background-color: var(--color-close-sesion-hover);
+    filter: none;
+}
+
+@media (max-width: 1000px) {
+    .cerrar-sesion {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== HEADER ===== */
+header {
+    position: sticky;
+    top: 0;
+    padding: 2rem 3rem;
+    margin: 0 0 2rem 0;
+    background-color: var(--color-hd-bg);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 6rem;
+    z-index: 101;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-nav-bg) 10%, transparent); /* Para bajarle la opacidad a una variable */
+}
+
+header > h1 {
+    font-size: 2.5rem;
+    margin-left: 3rem;
+    min-width: 151px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: auto;
+    padding: 2rem;
+    background-color: var(--color-nav-bg);
+    text-align: center;
+    margin-left: var(--nav-width);
+}
+
+footer p,
+footer a {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+@media (max-width: 570px) {
+    header > h1 {
+        margin-left: 0px;
+    }
+}
+
+/* ===== FEEDBACK DE RESULTADOS DEL UTIL "mostrarResultados" ===== */
+.result {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s ease;
+}
+
+.result.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.result.correctly-added {
+    background-color: var(--color-success-bg);
+    border-left: 4px solid var(--color-success);
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+.result.not-added {
+    background-color: var(--color-error-bg);
+    border-left: 4px solid var(--color-error);
+    color: var(--color-error);
+    font-weight: bold;
+}
+
+/* ===== ESTADOS DE PEDIDOS ===== */
+.estado-badge {
+    padding: 0.4rem 1.2rem !important; /* Fuerza la anulación del padding global en span */
+    border-radius: 2rem;
+    font-size: 1.2rem !important;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.estado-pendiente {
+    background-color: #FFF3E0;
+    color: var(--color-pending);
+}
+
+.estado-en-preparacion {
+    background-color: #E3F2FD;
+    color: var(--color-in-preparation);
+}
+
+.estado-entregado {
+    background-color: var(--color-success-bg);
+    color: var(--color-delivered);
+}
+
+.estado-cancelado {
+    background-color: var(--color-error-bg);
+    color: var(--color-canceled);
+}
+
+
+
+
+
+/* ===== ANIMACIONES COMPARTIDAS ===== */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* DROPDOWN */
+
+select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 2px solid var(--color-input-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition);
+}
+
+select:hover {
+    border-color: var(--color-primary);
+}
+
+select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(255, 107, 53, 0.25);
+}
+
+/* MODAL */
+
+body.modal-open {
+    overflow: hidden;   /* bloquea el scroll de fondo */
+}

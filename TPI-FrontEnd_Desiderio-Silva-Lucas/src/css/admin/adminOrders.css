@@ -1,0 +1,212 @@
+/* =============================================
+   VISTA: ADMINISTRAR PEDIDOS
+   ============================================= */
+
+/* --- ENCABEZADO Y FILTROS --- */
+#orders-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--color-white);
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--color-shadow); /* Sombra admin unificada */
+    border: 1px solid var(--color-input-border); /* Borde admin unificado */
+}
+
+#filtro-estado {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; 
+}
+
+/* Los filtros los mantenemos en forma de píldora pero con las transiciones correctas */
+.btn-filtro {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 1px solid var(--color-input-border);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    border-radius: 2rem; 
+    transition: var(--transition);
+}
+
+
+.btn-sin-estado:not(.clicked):hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+}
+
+.btn-pendiente:not(.clicked):hover {
+    border-color: var(--color-pending);
+    background-color: color-mix(in srgb, var(--color-pending) 20%, transparent);
+}
+
+.btn-en-preparacion:not(.clicked):hover {
+    border-color: var(--color-in-preparation);
+    background-color: color-mix(in srgb, var(--color-in-preparation) 20%, transparent);
+}
+
+.btn-entregado:not(.clicked):hover {
+    border-color: var(--color-delivered);
+    background-color: color-mix(in srgb, var(--color-delivered) 20%, transparent);
+}
+
+.btn-cancelado:not(.clicked):hover {
+    border-color: var(--color-canceled);
+    background-color: color-mix(in srgb, var(--color-canceled) 20%, transparent);
+}
+
+
+
+.btn-pendiente.clicked {
+    background-color: var(--color-pending);
+    color: var(--color-white); 
+    border-color: var(--color-pending);
+}
+
+.btn-en-preparacion.clicked {
+    background-color: var(--color-in-preparation);
+    color: var(--color-white); 
+    border-color: var(--color-in-preparation);
+}
+
+.btn-entregado.clicked {
+    background-color: var(--color-delivered);
+    color: var(--color-white); 
+    border-color: var(--color-delivered);
+}
+
+.btn-cancelado.clicked {
+    background-color: var(--color-canceled);
+    color: var(--color-white); 
+    border-color: var(--color-canceled);
+}
+
+
+/* --- CONTENEDOR DE PEDIDOS --- */
+#contenedor-orders {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem; 
+    align-items: start; 
+}
+
+/* --- TARJETA DE CADA PEDIDO --- */
+.order-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-input-border);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 10px var(--color-shadow); /* Sombra admin unificada */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%; 
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-bg); /* Unificado con el borde suave de las tablas */
+    padding-bottom: 1rem;
+}
+
+.order-id {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.order-date {
+    font-size: 1.3rem;
+    color: #64748b; 
+}
+
+/* --- CUERPO DEL PEDIDO --- */
+.order-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1; /* Obliga al body a ocupar todo el espacio libre de la tarjeta */
+}
+
+.order-client-info p {
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.order-total {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-price);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: auto; /* Mueve hacia abajo */
+}
+
+/* Recuadro de ticket para el resumen, con limitador de renglones */
+.order-resumen {          
+    font-size: 1.3rem;
+    line-height: 1.5;               
+    color: var(--color-text);            
+    background-color: var(--color-bg); 
+    padding: 1rem 1.2rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--color-input-border);
+    margin: 0.5rem 0;
+}
+
+/* --- ACCIONES DEL ADMINISTRADOR --- */
+.order-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-bg);
+    padding: 1rem;
+    border-radius: 0.8rem;
+}
+
+/* Select unificado con los inputs del admin.css */
+.order-actions select {
+    width: auto;
+    margin-bottom: 0;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    font-weight: 600;
+    border: 2px solid var(--color-input-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    outline: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.order-actions select:focus {
+    border-color: var(--color-primary);
+}
+
+/* Botón unificado con el comportamiento de .btn-secondary */
+.btn-detalles {
+    background-color: var(--color-back-btn);
+    color: var(--color-text);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-detalles:hover {
+    background-color: var(--color-back-btn-hover);
+    color: var(--color-text);
+}

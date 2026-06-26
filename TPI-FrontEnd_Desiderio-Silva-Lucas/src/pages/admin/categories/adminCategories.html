@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store — CRUD Categorías</title>
+    <link rel="icon" type="image/png" href="../../../icon.png">
+    <link rel="stylesheet" href="../../../css/base.css">
+    <link rel="stylesheet" href="../../../css/admin/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="logo-seccion"><a href="../adminHome/adminHome.html"><img src="../../../logo-texto.png" alt="Logo" class="logo"></a><span class="panel-admin-span">| Panel Admin</span></div>
+        <button class="cerrar-sesion"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+    </header>
+
+    <nav id="main-nav">
+        <ul id="nav-list">
+            <li><a class="nav-item" href="../adminHome/adminHome.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li><a class="nav-item" href="../products/adminProducts.html"><i class="fa-solid fa-box"></i> Productos</a></li>
+            <li><a class="nav-item clicked" href="#"><i class="fa-solid fa-tags"></i> Categorías</a></li>
+            <li><a class="nav-item" href="../orders/adminOrders.html"><i class="fa-solid fa-receipt"></i> Pedidos</a></li>
+            <li><a class="nav-item" href="../../store/home/home.html"><i class="fa-solid fa-store"></i> Ver Tienda</a></li>
+        </ul>
+    </nav>
+
+    <main id="admin-main-content">
+        
+        <div class="admin-header">
+            <h2>Gestión de Categorías</h2>
+            <button id="btn-nueva-categoria" class="btn-primary"><i class="fa-solid fa-plus"></i> Nueva Categoría</button>
+        </div>
+
+        <span id="categoria-rs" class="result"></span>
+
+        <section class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-categorias"></tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Food Store. Panel de Administración Integrado.</p>
+    </footer>
+
+    <script type="module" src="./adminCategories.ts"></script>
+</body>
+</html>

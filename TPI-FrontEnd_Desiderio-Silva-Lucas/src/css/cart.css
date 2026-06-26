@@ -1,0 +1,394 @@
+/* =============================================
+   CART.CSS — Food Store
+   Requiere base.css cargado antes
+   ============================================= */
+
+
+
+
+/* ===== HEADER (overwrite margin) ===== */
+header {
+    margin-bottom: 3rem;
+}
+
+/* ===== MAIN Y FOOTER ===== */
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(auto, 65rem) 25rem; 
+    justify-content: center; /* Centra ambas columnas juntas en la pantalla */
+    gap: 3rem;
+    padding: 3rem;
+    align-items: start;
+}
+
+/* Media queries unificadas para el layout principal */
+@media (max-width: 1150px) {
+    main {
+        /* Pasamos a 1 sola columna centrada */
+        grid-template-columns: minmax(auto, 70rem); 
+    }
+}
+
+@media (max-width: 765px) {
+    main { 
+        margin-left: 100px;
+        grid-template-columns: 1fr; /* En celulares el checkout queda abajo */
+        padding: 1.5rem;
+     }
+     
+    footer {
+        margin-left: 100px;
+    }
+}
+
+/* ===== LISTA DE PRODUCTOS ===== */
+#productsCart {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* ===== SIN PRODUCTOS ===== */
+.no-products {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+    /* grid-column y top eliminados: obsoletos en este contexto flex y sin position */
+}
+
+/* ===== CARDS ===== */
+article {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0px 2px 8px var(--color-shadow);
+    display: flex;
+    flex-direction: row; /* Elementos uno al lado del otro */
+    align-items: center; /* Centrados verticalmente */
+    gap: 2rem;
+    width: 100%;
+}
+
+article img {
+    width: 10rem;
+    height: 10rem;
+    margin: 0;
+}
+
+/* Agrupamos toda la info para que ocupe el espacio central */
+.info-producto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nombre {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.precio {
+    color: var(--color-price);
+    font-size: 1.6rem;
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+.precio-subtotal {
+    color: var(--color-price);
+    font-weight: bold;
+    padding-top: 0;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+/* Ajustes de tarjeta para celulares */
+@media (max-width: 765px) {
+    article {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .info-producto {
+        align-items: center;
+    }
+}
+
+/* ===== BOTONES AGREGAR / ELIMINAR (+ y -) ===== */
+.agregar-sacar-producto {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--color-bg); /* Fondo gris clarito para el grupito */
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 1px solid var(--color-input-border);
+}
+
+.agregar-sacar-producto > button {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 50%; /* Botones redondos */
+    font-size: 2rem;
+    font-weight: bold;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.agregar-sacar-producto > button i {
+    font-size: 1.5rem;   
+}
+
+
+.cantidad-producto {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-text);
+    min-width: 2rem;
+    text-align: center;
+}
+
+.agregar-producto {
+    background-color: var(--color-cart-add);
+}
+.restar-producto {
+    background-color: var(--color-cart-remove);
+}
+
+.agregar-producto:hover,
+.restar-producto:hover {
+    filter: brightness(90%);
+    transform: scale(1.05);
+}
+
+@media (max-width: 765px) {
+    .agregar-sacar-producto {
+        margin: 0 auto; /* Centramos los botones de +/- en celulares */
+    }
+}
+
+/* ===== BOTÓN ELIMINAR ITEM (basura) ===== */
+.btn-eliminar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(31, 31, 31); /* Color para el icono de FontAwesome */
+    background: transparent;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    padding: 1rem;
+    transition: var(--transition);
+    font-size: 2rem;
+}
+
+.btn-eliminar-item:hover {
+    filter: brightness(90%) drop-shadow(0 0 4px rgba(31, 31, 31, 0.2));
+    transform: scale(1.05);
+}
+
+/* ===== CHECKOUT ===== */
+.checkout-container {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    width: 100%;
+    height: fit-content;
+    position: sticky;
+    top: 10rem;
+    display: none; /* para que no salga por 1 segundo y se vaya si es que no hay items */
+}
+
+#total {
+    display: flex;
+    flex-direction: column;
+}
+
+#total p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-price);
+    text-align: center;
+}
+
+.btn-finalizar {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.btn-finalizar:hover {
+    filter: brightness(90%);
+}
+
+/* En tablets y móviles el checkout pierde el sticky */
+@media (max-width: 1150px) {
+    .checkout-container {
+        position: static; 
+        margin-top: 2rem;
+    }
+}
+
+/* ===== RESUMEN CHECKOUT ===== */
+.checkout-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--color-hd-bg);
+}
+
+.resumen-linea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.resumen-divisor {
+    border: none;
+    border-top: 1px solid var(--color-input-border);
+    margin: 1.5rem 0;
+}
+
+.total-final {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-price);
+    margin-bottom: 2rem;
+}
+
+/* ===== FORMULARIO CHECKOUT ===== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    font-size: 1.4rem;
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 0; /* Anula el padding por defecto de los labels en base.css */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 2px solid var(--color-input-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    outline: none;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+/* Efecto al hacer clic en el input */
+.input-group input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(255, 107, 53, 0.25); 
+}
+
+.input-group input::placeholder {
+    color: #9CA3AF; /* Un gris sutil para el texto de ejemplo */
+}
+
+
+
+
+/* ===== BOTÓN VACIAR CARRITO ===== */
+.btn-vaciar-carrito {
+    background-color: transparent;
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-vaciar-carrito:hover {
+    background-color: var(--color-error-bg);
+}
+
+/* ===== ESTADO VACÍO ===== */
+.carrito-vacio {
+    text-align: center;
+    padding: 5rem;
+    /* grid-column eliminado: productsCart es un flex container ahora */
+}
+
+.btn-volver-tienda {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: var(--transition);
+}
+
+.btn-volver-tienda:hover {
+    filter: brightness(90%);
+}
+
+/* ===== FEEDBACK DEL RESULTADO DE AGREGAR MÁS ===== */
+
+#agregar-rs {
+    position: fixed;
+    top: 6rem;
+    left: 17rem;
+    width: 20rem;
+}
+
+@media (max-width: 765px) {
+    #agregar-rs {
+        left: 12rem;
+        width: 15rem;
+    }
+}
+
+
+
+/* MENSAJE DE EXITO DEL PEDIDO (overwrite) */
+
+.result.correctly-added {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 45px;
+    background-color: rgba(32, 201, 150);
+    color: var(--color-text-light);
+    padding: 2rem;
+    font-size: 2rem;
+    max-width: 80rem;
+}

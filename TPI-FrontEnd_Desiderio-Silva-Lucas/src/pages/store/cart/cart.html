@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../../icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/cart.css">
+    <link rel="stylesheet" href="/src/css/modals/modalDetail.css">
+    <title>Food Store - Carrito</title>
+</head>
+<body>
+    <header>
+        <div class="logo-seccion"><a href="../home/home.html"><img src="../../../logo-texto.png" alt="Logo" class="logo"></a></div>
+        <button class="cerrar-sesion"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+    </header>
+    <nav id="main-nav">
+    <ul id="nav-list">
+        <li><a class="nav-item" href="../home/home.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a class="nav-item" href="../../client/orders/orders.html"><i class="fa-solid fa-receipt"></i> Mis Pedidos</a></li>
+        <li><a class="nav-item clicked"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <li id="li-admin" hidden></li>
+    </ul>
+    </nav>
+    <main>
+        <section id="productsCart"></section>
+        <div class="checkout-container">
+            <button id="btn-vaciar" class="btn-vaciar-carrito">Vaciar Carrito</button>
+            <div id="total"></div>
+            <div class="input-group">
+                <label for="telefono-checkout">Teléfono de contacto:</label>
+                <input type="tel" id="telefono-checkout" placeholder="Ej: 11 2345 6789" required>
+            </div>
+            <select id="forma-pago">
+                <option value="" disabled selected>Método de pago</option>
+                <option value="TRANSFERENCIA">Transferencia</option>
+                <option value="EFECTIVO">Efectivo</option>
+                <option value="TARJETA">Tarjeta</option>
+            </select>
+            <button class="btn-finalizar">Finalizar compra</button>
+            <span class="result" id="orden-rs"></span>
+        </div>
+    </main>
+    <footer>
+        <p>© 2026 Food Store. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a></p>
+    </footer>
+    <script src="./cart.ts" type="module"></script>
+</body>
+</html>

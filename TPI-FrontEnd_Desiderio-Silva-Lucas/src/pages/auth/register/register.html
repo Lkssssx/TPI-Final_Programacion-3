@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store - Registro</title>
+    <link rel="icon" type="image/png" href="../../../icon.png">
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/auth.css">
+</head>
+<body>
+    <main>
+        <div class="usuarios">
+            <p><strong>Admin:</strong> admin@admin.com / 123456</p>
+            <p><strong>Cliente:</strong> cliente@food.com / cliente123</p>
+        </div>
+        <div class="container">
+            <form class="login-form register-form">
+                <h1>FOOD STORE</h1>
+                <h2>Crear Cuenta</h2>
+
+                <label for="nombre">Nombre:</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    required>
+
+                <label for="apellido">Apellido:</label>
+                <input
+                    type="text"
+                    id="apellido"
+                    name="apellido"
+                    placeholder="Tu apellido"
+                    required>
+
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="tucorreo@ejemplo.com"
+                    required>
+
+                <label for="celular">Celular:</label>
+                <input
+                    type="tel"
+                    id="celular"
+                    name="celular"
+                    placeholder="11 12345678"
+                    required>
+
+                <label for="password">Contraseña:</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Mínimo 6 caracteres"
+                    required>
+
+                <button type="submit">REGISTRAR</button>
+
+                <span class="error-mensaje result"></span>
+
+                <p class="registro">
+                    ¿Ya tenés cuenta? <a href="../login/login.html">Logueate acá</a>
+                </p>
+            </form>
+        </div>
+    </main>
+    <script src="./register.ts" type="module"></script>
+</body>
+</html>

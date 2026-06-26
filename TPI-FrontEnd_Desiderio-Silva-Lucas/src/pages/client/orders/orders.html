@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../../icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/orders.css">
+    <link rel="stylesheet" href="/src/css/modals/modalDetail.css">
+    <title>Food Store - Mis Pedidos</title>
+</head>
+<body>
+    <header>
+        <div class="logo-seccion"><a href="../../store/home/home.html"><img src="../../../logo-texto.png" alt="Logo" class="logo"></a></div>
+        <button class="cerrar-sesion"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+    </header>
+    <nav id="main-nav">
+    <ul id="nav-list">
+        <li><a class="nav-item" href="../../store/home/home.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a class="nav-item clicked"><i class="fa-solid fa-receipt"></i> Mis Pedidos</a></li>
+        <li><a class="nav-item" href="../../store/cart/cart.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <li id="li-admin" hidden></li>
+    </ul>
+    </nav>
+    <main>
+        <section id="orders-header">
+            <h2>Mis Pedidos</h2>
+            <div id="filtro-estado">
+                <button class="btn-filtro btn-sin-estado clicked" data-estado="">Todos</button>
+                <button class="btn-filtro btn-pendiente" data-estado="PENDIENTE">Pendientes</button>
+                <button class="btn-filtro btn-en-preparacion" data-estado="EN_PREPARACION">En preparación</button>
+                <button class="btn-filtro btn-entregado" data-estado="ENTREGADO">Entregados</button>
+                <button class="btn-filtro btn-cancelado" data-estado="CANCELADO">Cancelados</button>
+            </div>
+        </section>
+        <section id="contenedor-orders"></section>
+    </main>
+    <footer>
+        <p>© 2026 Food Store. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a></p>
+    </footer>
+    <script src="./orders.ts" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
+    display: flex;
+    justify-content: center; 
+    padding: 0 3rem;
+}
+
+
+/* ===== PRODUCT DETAIL ===== */
+
+#product-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 60vh;
+    width: 60rem;
+}
+
+.product-content {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    width: 70rem;
+    max-width: 100%;
+    flex-direction: column;
+}
+
+#product-content img {
+    height: 40rem;
+    margin: 0;
+}
+
+/* ===== PRODUCT INFO ===== */
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.product-info .price {
+    font-size: 2.2rem;
+    color: var(--color-price);
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.product-info .description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.product-info .details {
+    background-color: var(--color-primary-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+}
+
+.product-info .details p {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+    color: var(--color-text);
+    padding: 0;
+}
+
+.product-info .details strong {
+    color: var(--color-primary);
+}
+
+/* ===== PRODUCT ACTIONS ===== */
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.product-actions button {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: var(--color-add-product-btn);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: var(--transition);
+    letter-spacing: 0.1rem;
+}
+
+.product-actions button:hover {
+    background-color: var(--color-add-product-btn-hover);
+    transform: translateY(-2px);
+}
+
+.product-actions button:active {
+    transform: translateY(0);
+}
+
+/* ===== FEEDBACK AGREGAR (variante detalle, extiende base.css) ===== */
+.agregar-producto-rs {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    display: block;
+}
+
+.agregar-producto-rs.visible {
+    animation: slideDown 0.4s ease-out;
+}
+
+.agregar-producto-rs.correctly-added {
+    background-color: var(--color-success-bg);
+    border-left: 4px solid var(--color-success);
+}
+
+.agregar-producto-rs.not-added {
+    background-color: var(--color-error-bg);
+    border-left: 4px solid var(--color-error);
+}
+
+/* ===== BOTÓN ATRÁS ===== */
+.btn-back {
+    background-color: var(--color-back-btn);
+    color: var(--color-text);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-back:hover {
+    background-color: var(--color-back-btn-hover);
+    transform: translateX(-3px);
+    filter: none;
+}
+
+.btn-back:active {
+    transform: translateX(-1px);
+}
+
+.no-encontrado {
+    text-align: center;
+    color: var(--color-error);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    #product-content {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    #product-content img {
+        height: 30rem;
+    }
+
+    .product-info h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #product-detail-container {
+        padding: 1rem;
+    }
+
+    #product-content {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .product-info h1 { font-size: 1.8rem; }
+    .product-info .price { font-size: 1.8rem; }
+
+    .product-actions button {
+        padding: 1.2rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #product-detail-container {
+        padding: 0.5rem;
+        min-height: auto;
+    }
+
+    #product-content {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    #product-content img { height: 20rem; }
+
+    .product-info h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-info .price {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-info .description {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-actions button {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../../icon.png">
+    <title>Food Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href = "/src/css/home.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-seccion"><a href="../home/home.html"><img src="../../../logo-texto.png" alt="Logo" class="logo"></a></div>
+        <form id="searchForm">
+            <input name="buscarInput" id="buscarProducto" type="text" placeholder="Buscar productos...">
+        </form>
+        <button class="cerrar-sesion"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+    </header>
+    <nav id="main-nav">
+        <ul id="nav-list">
+            <li><a class="nav-item clicked"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a class="nav-item" href="../../client/orders/orders.html"><i class="fa-solid fa-receipt"></i> Mis Pedidos</a></li>
+            <li><a class="nav-item" href="../cart/cart.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+            <li id="li-admin" hidden></li>
+            <ul id="nav-categorias">
+                <li class="categorias">Categorias</li>
+            </ul>
+        </ul>
+    </nav>
+    <main>
+        
+        <h2 class="productos-destacados">Productos Destacados</h2>
+        <select id="ordenado">
+            <option value="" selected>Sin ordernar</option>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+            <option value="precio-des">Precio desc.</option>
+            <option value="precio-asc">Precio asc.</option>
+        </select>
+        <section id="contenedor-productos"></section>
+    </main>
+    <footer>
+        <p>© 2026 Food Store. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="mailto:info@foodstore.com">info@foodstore.com</a></p>
+    </footer>
+    <script src="./home.ts" type="module"></script>
+</body>
+</html>

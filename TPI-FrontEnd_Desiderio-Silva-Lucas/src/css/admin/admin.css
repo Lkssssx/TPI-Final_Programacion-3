@@ -1,0 +1,330 @@
+/* =============================================
+   ADMIN.CSS — Estilos Globales del Panel Admin
+   (Layout, Tablas, Botones y Modales)
+   ============================================= */
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+#dashboard-main, 
+#admin-main-content {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Span que acompaña al logo en el Header */
+.panel-admin-span {
+    font-size: 1.5rem;     
+    color: var(--color-text);
+    letter-spacing: 0.5px;
+    white-space: nowrap;    /* Evita que el texto se rompa en dos líneas en pantallas chicas */
+    user-select: none;      /* Bloquea la selección de texto para que actue como un logo real */
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+}
+
+/* ===== ENCABEZADO DE SECCIÓN (Gestión) ===== */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-white);
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--color-shadow);
+    border: 1px solid var(--color-input-border);
+}
+
+.admin-header h2 {
+    font-size: 2.2rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* ===== BOTONES GENERALES DE ADMINISTRACIÓN ===== */
+.btn-primary, .btn-secondary, .btn-danger {
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-back-btn);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-back-btn-hover);
+}
+
+.btn-danger {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-danger:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ===== TABLAS DE DATOS (Categorías, Productos) ===== */
+.table-container {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--color-shadow);
+    border: 1px solid var(--color-input-border);
+    overflow-x: auto; 
+    animation: slideUp 0.3s ease-out forwards; /* ease-out para arrancar rapido y forwards para que no pueda rebotar*/
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th, .admin-table td {
+    padding: 1.5rem 2rem;
+    font-size: 1.4rem;
+    border-bottom: 1px solid var(--color-bg);
+    vertical-align: middle;
+}
+
+.admin-table th {
+    background-color: var(--color-primary-light);
+    color: var(--color-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 1.2rem;
+}
+
+.admin-table tbody tr:hover {
+    background-color: var(--color-bg); 
+}
+
+/* Miniatura de imagen unificada para cualquier tabla admin */
+.td-img-admin {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    margin: 0; /* Anula el margin de base.css */
+}
+
+/* Botones de acción dentro de las tablas */
+.btn-accion {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    color: var(--color-text);
+    transition: var(--transition);
+    border-radius: 0.4rem;
+}
+
+.btn-editar:hover { 
+    color: var(--color-primary); 
+    background-color: var(--color-primary-light);
+}
+
+.btn-eliminar:hover { 
+    color: var(--color-error); 
+    background-color: var(--color-error-bg);
+}
+
+
+
+
+/* ===== MODALES COMPARTIDOS ENTRE adminCategories y adminProducts ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease;
+}
+
+.modal.oculto {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    width: 90%; /* Ajuste para que no toque los bordes */
+    max-width: 500px;
+    max-height: 90vh; 
+    overflow-y: auto; /* Activa el scroll solo si es necesario */
+    margin: auto; /* Centrado de seguridad */
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: slideDown 0.3s ease-out;
+}
+
+.modal-sm {
+    max-width: 400px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid var(--color-bg);
+}
+
+.modal-header h3 {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.btn-close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text);
+}
+
+.btn-close-modal:hover {
+    color: var(--color-error);
+}
+
+.modal-body {
+    padding: 2rem;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    text-align: center;
+}
+
+/* Formularios dentro de los modales */
+.modal-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-text);
+    padding: 0;
+}
+
+/* Estilos específicos para inputs dentro del modal */
+.form-group input, 
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    border: 2px solid var(--color-input-border);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: var(--transition);
+    font-family: inherit;
+    background-color: var(--color-white);
+    color: var(--color-text);
+}
+
+.form-group textarea {
+    resize: vertical; 
+}
+
+.form-group input:focus, 
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+}
+
+.modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 2rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid var(--color-bg);
+}
+
+/* ===== FILTROS PEDIDOS ===== */
+
+.filtros-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Por si lo abren desde pantallas chicas */
+    margin: 1.5rem 0;
+}
+
+.btn-filtro {
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-input-border);
+    background-color: var(--color-white);
+    transition: var(--transition);
+}
+
+.btn-filtro.clicked {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-color: var(--color-primary);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 765px) {
+    #dashboard-main, 
+    #admin-main-content {
+        padding: 1.5rem;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .admin-table th, .admin-table td {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem !important; 
+    }
+
+    .panel-admin-span {
+        font-size: 1.4rem;
+    }
+}

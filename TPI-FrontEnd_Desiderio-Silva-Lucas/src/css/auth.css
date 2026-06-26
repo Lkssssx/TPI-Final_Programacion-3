@@ -1,0 +1,228 @@
+/* =============================================
+   AUTH.CSS — Food Store
+   Requiere base.css cargado antes
+   ============================================= */
+
+/* ===== BODY (override base: centra el contenido verticalmente, saca margen en main y animation) ===== */
+body {
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    margin: 0px;
+    animation: none;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+/* ===== FORMULARIO ===== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    padding: 4rem;
+    width: 40rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--color-shadow);
+    transition: var(--transition);
+    animation: slideUp 0.5s ease-out;
+}
+
+.login-form:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.login-form h1 {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-form h2 {
+    margin-bottom: 3rem;
+    font-weight: 300;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 1.8rem;
+}
+
+.login-form label {
+    display: flex;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-transform: capitalize;
+    padding: 0; /* override base p/a/label padding */
+}
+
+.login-form input {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.6rem;
+    border: 2px solid var(--color-input-border);
+    outline: none;
+    width: 100%;
+    background-color: var(--color-white);
+    color: var(--color-text);
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.login-form input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    transform: translateY(-2px);
+}
+
+.login-form input::placeholder {
+    color: #999;
+}
+
+.login-form button {
+    padding: 1.8rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.2);
+}
+
+.login-form button:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+    filter: none;
+}
+
+.login-form button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(255, 107, 53, 0.2);
+}
+
+
+/* ===== LINKS Y REGISTRO ===== */
+.login-form p {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--color-text);
+    padding: 0; /* override base p padding */
+}
+
+.registro {
+    padding: 0 !important;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-input-border);
+    padding-top: 2rem !important;
+}
+
+.login-form a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: bold;
+    transition: var(--transition);
+    display: inline-block;
+    padding: 0; /* override base a padding */
+}
+
+.login-form a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+    filter: none;
+}
+
+/* ===== PANEL DE USUARIOS DE PRUEBA ===== */
+.usuarios {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-primary);
+    font-size: 1rem;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    max-width: 25rem;
+    z-index: 50;
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+.usuarios p {
+    margin: 0.8rem 0;
+    font-size: 1.3rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 0; /* override base p padding */
+}
+
+.usuarios p strong {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .login-form {
+        padding: 3rem 2rem;
+        max-width: 90%;
+    }
+
+    .login-form h1 { font-size: 2.5rem; }
+    .login-form h2 { font-size: 1.5rem; margin-bottom: 2rem; }
+
+    .usuarios {
+        top: 1rem;
+        left: 1rem;
+        max-width: 85%;
+        font-size: 0.9rem;
+    }
+
+    .usuarios p { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 1rem; }
+
+    .login-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-form h1 { font-size: 2rem; }
+    .login-form h2 { font-size: 1.3rem; }
+
+    .login-form input,
+    .login-form button {
+        font-size: 1.4rem;
+        padding: 1.3rem;
+    }
+
+    .usuarios {
+        position: absolute;
+        max-width: 80%;
+        padding: 1rem;
+    }
+
+    .usuarios p { font-size: 1rem; }
+}
