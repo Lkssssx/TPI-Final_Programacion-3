@@ -1,1 +1,8 @@
-# TPI-Final_Programacion-3
+# TPI Final de Programación 3
+___
+
+Alumno: Lucas Desiderio Silva
+
+___
+
+## Información de uso dentro de sus respectivas carpetas
