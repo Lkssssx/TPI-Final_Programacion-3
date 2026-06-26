@@ -1,5 +1,4 @@
 # TPI Final de Programación 3
-___
 
 Alumno: Lucas Desiderio Silva
 
