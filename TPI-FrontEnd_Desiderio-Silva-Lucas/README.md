@@ -13,11 +13,11 @@ En esta primera iteración, la aplicación consume los datos simulando una API R
 Para evaluar los distintos roles del sistema y el enrutamiento protegido, utilizar las siguientes credenciales (definidas en `public/data/usuarios.json`):
 
 * **Rol Administrador (ADMIN):**
-    * **Email:** lucas@mail.com
-    * **Contraseña:** pass123
+    * **Email:** admin@admin.com
+    * **Contraseña:** 123456
 * **Rol Cliente (USUARIO):**
-    * **Email:** juan@mail.com
-    * **Contraseña:** pass456
+    * **Email:** cliente@food.com
+    * **Contraseña:** cliente123
 
 ---
 

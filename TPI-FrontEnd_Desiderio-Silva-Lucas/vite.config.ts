@@ -13,7 +13,11 @@ export default defineConfig({
         authLogin: resolve(__dirname, 'src/pages/auth/login/login.html'),
         authRegister: resolve(__dirname, 'src/pages/auth/register/register.html'),
         orders: resolve(__dirname, 'src/pages/client/orders/orders.html'),
-        productDetails: resolve(__dirname, 'src/pages/store/productDetails/productDetails.html')
+        productDetails: resolve(__dirname, 'src/pages/store/productDetail/productDetail.html'),
+        adminHome: resolve(__dirname, 'src/pages/admin/adminHome/adminHome.html'),
+        adminCategories: resolve(__dirname, 'src/pages/admin/categories/adminCategories.html'),
+        adminOrders: resolve(__dirname, 'src/pages/admin/orders/adminOrders.html'),
+        adminProducts: resolve(__dirname, 'src/pages/admin/products/adminProducts.html')
 
       },
     },
