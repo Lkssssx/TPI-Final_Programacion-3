@@ -127,5 +127,5 @@ logoutBtn.addEventListener("click", () => {
 
 // Cargamos los datos
 cargarDatos();
-// Cargar el producto al montar el componente
+// Cargar el producto
 renderProductDetail();

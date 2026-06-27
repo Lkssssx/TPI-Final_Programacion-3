@@ -210,4 +210,5 @@ const renderizarTodo = (): void => {
     }
 }
 
+// Cargamos los datos
 cargarDatos();
