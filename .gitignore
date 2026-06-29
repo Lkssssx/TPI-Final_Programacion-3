@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Carpeta principal
-"./Informe - TPI Programación 3 - Desiderio Silva, Lucas.docx"
+*.docx
