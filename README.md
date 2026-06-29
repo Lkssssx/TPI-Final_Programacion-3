@@ -74,17 +74,10 @@ El backend modela seis entidades JPA (`Base`, `Categoria`, `Producto`, `Usuario`
 
 ---
 
-## 🎥 Video Demostrativo
-
-> 🔗 [REEMPLAZAR CON EL LINK AL VIDEO]
-
-El video cubre el flujo completo de ambas partes: login por rol, catálogo, carrito, checkout, panel admin, y demostración del menú de consola con alta de pedido, reportes y baja lógica.
-
----
 
 ## 📄 Informe Técnico
 
-> 🔗 [REEMPLAZAR CON EL LINK AL PDF O SUBIR EL PDF A LA RAÍZ DEL REPO]
+> [ℹ️ Informe](./Informe%20-%20TPI%20Programación%203%20-%20Desiderio%20Silva,%20Lucas.pdf)
 
 ---
 
