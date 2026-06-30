@@ -53,8 +53,8 @@ cd TPI-BackEnd_Desiderio-Silva-Lucas
 
 | Rol | Email | Contraseña |
 |---|---|---|
-| Administrador | lucas@mail.com | pass123 |
-| Cliente | juan@mail.com | pass456 |
+| Administrador | admin@admin.com | 123456 |
+| Cliente | cliente@food.com | cliente123 |
 
 ---
 
